@@ -126,7 +126,8 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Expanded(
+              SizedBox(
+                height: 300,
                 child: TabBarView(
                   children: [
                     Column(
@@ -180,7 +181,21 @@ class HomeScreen extends StatelessWidget {
                     Container()
                   ],
                 ),
-              )
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Hidden Tokens (2)"),
+                  Icon(Icons.keyboard_arrow_down_sharp)
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text("Suspisious Tokens (15)"),
+                  Icon(Icons.keyboard_arrow_down_sharp)
+                ],
+              ),
             ],
           ),
         ),
