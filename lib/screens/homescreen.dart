@@ -115,8 +115,28 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(height: 10,),
-                        TileWidget()
+                        const SizedBox(height: 10,),
+                        const TileWidget(
+                          avatarBackgroundColor: Colors.grey,
+                          avatarText: "P",
+                          positionedIcon: Icons.check,
+                          titleText: "Waves 💙",
+                          subText: "5.0054",
+                        ),
+                        const TileWidget(
+                          avatarBackgroundColor: Colors.grey,
+                          avatarText: "P",
+                          positionedIcon: Icons.arrow_back_ios_new,
+                          titleText: "Pigeon / My Token",
+                          subText: "1444.04556321",
+                        ),
+                        const TileWidget(
+                          avatarBackgroundColor: Colors.green,
+                          avatarText: "\$",
+                          positionedIcon: Icons.check,
+                          titleText: "US Dollar",
+                          subText: "199.24",
+                        ),
                       ],
                     ),
                     Container()
