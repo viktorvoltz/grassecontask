@@ -89,7 +89,35 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              //Expanded(child: child)
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              height: 40,
+                              width: 350,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                    filled: true,
+                                    fillColor: Colors.grey,
+                                    prefixIcon: const Icon(Icons.search),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: BorderSide.none),
+                                    hintText: "Search"),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Container()
+                  ],
+                ),
+              )
             ],
           ),
         ),
