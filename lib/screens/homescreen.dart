@@ -5,8 +5,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      body: SafeArea(
+        minimum: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            Row(
+              children: const [
+                Icon(Icons.notifications_none_outlined),
+                Icon(Icons.person)
+              ],
+            )
+          ],
+        ),
+        ),
     );
   }
 }
