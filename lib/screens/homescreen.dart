@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:grassecontask/global_widgets/dash_board.dart';
 import 'package:grassecontask/global_widgets/tile.dart';
 
+import '../global_widgets/sheet_content.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -12,9 +14,7 @@ class HomeScreen extends StatelessWidget {
         showModalBottomSheet<void>(
             context: context,
             builder: (BuildContext context) {
-              return Container(
-                height: 200,
-              );
+              return const SheetContent();
             });
       }
     }
