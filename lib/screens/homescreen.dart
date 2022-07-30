@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grassecontask/global_widgets/dash_board.dart';
+import 'package:grassecontask/global_widgets/tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -102,6 +103,8 @@ class HomeScreen extends StatelessWidget {
                               child: TextField(
                                 decoration: InputDecoration(
                                     filled: true,
+                                    isDense: true,
+                                    contentPadding: const EdgeInsets.all(8),
                                     fillColor: Colors.grey,
                                     prefixIcon: const Icon(Icons.search),
                                     border: OutlineInputBorder(
@@ -111,7 +114,9 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ],
-                        )
+                        ),
+                        SizedBox(height: 10,),
+                        TileWidget()
                       ],
                     ),
                     Container()
