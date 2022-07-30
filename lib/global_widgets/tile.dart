@@ -18,7 +18,7 @@ class TileWidget extends StatelessWidget {
             CircleAvatar(
               maxRadius: 20,
               backgroundColor: avatarBackgroundColor,
-              child: Text(avatarText!),
+              child: Text(avatarText!, style: const TextStyle(color: Colors.white),),
             ),
             Positioned(
               bottom: 1.0,
@@ -26,7 +26,7 @@ class TileWidget extends StatelessWidget {
               child: CircleAvatar(
               minRadius: 7,
               backgroundColor: Colors.white,
-              child: Icon(positionedIcon, size: 10,),
+              child: Icon(positionedIcon, size: 10, color: Colors.black,),
             ),
             )
           ],
