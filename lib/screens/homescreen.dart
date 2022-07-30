@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:grassecontask/global_widgets/dash_board.dart';
 import 'package:grassecontask/global_widgets/tile.dart';
@@ -90,8 +91,8 @@ class HomeScreen extends StatelessWidget {
                   width: double.infinity,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
-                    children: const [
-                      DashBoard(
+                    children: [
+                      const DashBoard(
                           icon: Icon(
                             Icons.qr_code_2,
                             color: Colors.white,
@@ -101,18 +102,37 @@ class HomeScreen extends StatelessWidget {
                             "Your address",
                             style: TextStyle(color: Colors.white),
                           )),
-                      SizedBox(width: 5),
-                      DashBoard(
-                          icon: Icon(Icons.person_outlined),
-                          color: Colors.white,
-                          name: Text("Aliases")),
-                      SizedBox(width: 5),
-                      DashBoard(
-                          icon: Icon(Icons.toggle_on),
-                          color: Colors.white,
-                          name: Text("Balance")),
-                      SizedBox(width: 5),
-                      DashBoard(
+                      const SizedBox(width: 5),
+                      const DashBoard(
+                        icon: Icon(Icons.person_outline),
+                        color: Colors.white,
+                        name: Text("Aliases"),
+                      ),
+                      const SizedBox(width: 5),
+                      Card(
+                        elevation: 3,
+                        shadowColor: Colors.black,
+                        color: Colors.white,
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 5),
+                          height: 50,
+                          width: 150,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              CupertinoSwitch(
+                                activeColor: Colors.blue,
+                                value: true,
+                                onChanged: (bool h) {},
+                              ),
+                              const Text("Balance"),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 5),
+                      const DashBoard(
                           icon: Icon(Icons.arrow_back),
                           color: Colors.white,
                           name: Text("Recieve")),
@@ -261,9 +281,5 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void _selectedItem(int index) {
-    if (index == 2) {}
   }
 }
