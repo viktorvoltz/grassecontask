@@ -7,6 +7,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void showSheet(int index) {
+      if (index == 2) {
+        showModalBottomSheet<void>(
+            context: context,
+            builder: (BuildContext context) {
+              return Container(
+                height: 200,
+              );
+            });
+      }
+    }
+
     return Scaffold(
       body: DefaultTabController(
         length: 2,
@@ -110,24 +122,22 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  child: const TabBar(
-                      unselectedLabelColor: Colors.black45,
-                      isScrollable: true,
-                      labelColor: Colors.black,
-                      tabs: [
-                        Tab(
-                          child: Text(
-                            "Tokens",
-                          ),
+                const TabBar(
+                    unselectedLabelColor: Colors.black45,
+                    isScrollable: true,
+                    labelColor: Colors.black,
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          "Tokens",
                         ),
-                        Tab(
-                          child: Text(
-                            "Leasing",
-                          ),
+                      ),
+                      Tab(
+                        child: Text(
+                          "Leasing",
                         ),
-                      ]),
-                ),
+                      ),
+                    ]),
                 const SizedBox(
                   height: 10,
                 ),
@@ -164,11 +174,17 @@ class HomeScreen extends StatelessWidget {
                                 width: 50,
                                 child: Stack(
                                   children: const [
-                                    Icon(Icons.arrow_upward_sharp, size: 20,),
+                                    Icon(
+                                      Icons.arrow_upward_sharp,
+                                      size: 20,
+                                    ),
                                     Positioned(
                                       top: 2.0,
                                       left: 8.0,
-                                      child: Icon(Icons.arrow_downward_sharp, size: 20,),
+                                      child: Icon(
+                                        Icons.arrow_downward_sharp,
+                                        size: 20,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -230,6 +246,7 @@ class HomeScreen extends StatelessWidget {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         currentIndex: 2,
+        onTap: showSheet,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(
@@ -244,5 +261,9 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _selectedItem(int index) {
+    if (index == 2) {}
   }
 }
