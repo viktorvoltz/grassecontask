@@ -21,9 +21,8 @@ class HomeScreen extends StatelessWidget {
                   children: const [
                     Icon(Icons.notifications_none_outlined),
                     CircleAvatar(
-                      maxRadius: 15,
-                      backgroundColor: Color.fromARGB(255, 2, 65, 61)
-                    )
+                        maxRadius: 15,
+                        backgroundColor: Color.fromARGB(255, 2, 65, 61))
                   ],
                 ),
                 const SizedBox(
@@ -40,7 +39,8 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     const Text(
                       "Mobile Team",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     const SizedBox(
                       width: 3,
@@ -59,7 +59,11 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Positioned(
                             bottom: -7,
-                            child: Icon(Icons.keyboard_arrow_down, size: 20, color: Colors.black54,),
+                            child: Icon(
+                              Icons.keyboard_arrow_down,
+                              size: 20,
+                              color: Colors.black54,
+                            ),
                           )
                         ],
                       ),
@@ -137,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                             children: [
                               SizedBox(
                                 height: 40,
-                                width: 350,
+                                width: 300,
                                 child: TextField(
                                   decoration: InputDecoration(
                                       filled: true,
@@ -146,11 +150,29 @@ class HomeScreen extends StatelessWidget {
                                       fillColor: Colors.grey,
                                       prefixIcon: const Icon(Icons.search),
                                       border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                           borderSide: BorderSide.none),
                                       hintText: "Search"),
                                 ),
                               ),
+                              const SizedBox(
+                                width: 3,
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                width: 50,
+                                child: Stack(
+                                  children: const [
+                                    Icon(Icons.arrow_upward_sharp, size: 20,),
+                                    Positioned(
+                                      top: 2.0,
+                                      left: 8.0,
+                                      child: Icon(Icons.arrow_downward_sharp, size: 20,),
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
                           const SizedBox(
@@ -210,25 +232,15 @@ class HomeScreen extends StatelessWidget {
         currentIndex: 2,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet,),
-            label: "wallet"
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.swap_horiz_rounded),
-            label: ""
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: ""
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: ""
-            ),
-            BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: ""
-            )
+              icon: Icon(
+                Icons.account_balance_wallet,
+              ),
+              label: "wallet"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.swap_horiz_rounded), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "")
         ],
       ),
     );
