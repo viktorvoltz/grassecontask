@@ -19,22 +19,58 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   Icon(Icons.notifications_none_outlined),
-                  Icon(Icons.person)
+                  CircleAvatar(
+                    maxRadius: 15,
+                    backgroundColor: Color.fromARGB(255, 2, 65, 61)
+                  )
                 ],
               ),
               const SizedBox(
                 height: 10,
               ),
-              const Text("Wallet"),
+              const Text(
+                "Wallet",
+                style: TextStyle(color: Colors.black54),
+              ),
               const SizedBox(
                 height: 5,
               ),
-              const Text("Mobile Team"),
+              Row(
+                children: [
+                  const Text(
+                    "Mobile Team",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4.0),
+                    child: Stack(
+                      alignment: Alignment.topCenter,
+                      children: const [
+                        Positioned(
+                          child: Icon(
+                            Icons.keyboard_arrow_up,
+                            size: 20,
+                            color: Colors.black54,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: -7,
+                          child: Icon(Icons.keyboard_arrow_down, size: 20, color: Colors.black54,),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
               const SizedBox(
                 height: 10,
               ),
               Container(
                 height: 100,
+                width: double.infinity,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: const [
@@ -115,10 +151,12 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         const TileWidget(
                           avatarBackgroundColor: Colors.grey,
-                          avatarText: "P",
+                          avatarText: "W",
                           positionedIcon: Icons.check,
                           titleText: "Waves 💙",
                           subText: "5.0054",
