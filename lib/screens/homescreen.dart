@@ -192,13 +192,37 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                  Text("Suspisious Tokens (15)"),
+                  Text("Suspicious Tokens (15)"),
                   Icon(Icons.keyboard_arrow_down_sharp)
                 ],
               ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_balance_wallet),
+            label: ""
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.swap_horiz_rounded),
+            label: ""
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: ""
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.list),
+            label: ""
+            ),
+            BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: ""
+            )
+        ],
       ),
     );
   }
